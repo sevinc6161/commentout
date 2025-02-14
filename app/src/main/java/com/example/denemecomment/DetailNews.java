@@ -35,10 +35,10 @@ public class DetailNews extends AppCompatActivity implements DetailNewsCallback 
     private TextView title, context ;
     private ImageView imageView,shareImage;
     private RecyclerView recyclerView;
-    private AdView adView,adViewMre;
+    private AdView adViewMre;
     private AdManager adManager;
 
-    private TextView textView2,textView;
+    private TextView textView;
 
     private WebView webView;
     private RelatedTwoController relatedTwoController;
@@ -70,7 +70,7 @@ public class DetailNews extends AppCompatActivity implements DetailNewsCallback 
         setContentView(R.layout.activity_detail_news);
 
         String targetUuid = getIntent().getStringExtra("uuid");
-        String json_url = getIntent().getStringExtra("json_url");
+       // String json_url = getIntent().getStringExtra("json_url");
         //burayı parse edip api call endpoint olarak vermeyi deneee !!
 
         progressBar = findViewById(R.id.progressBar);
@@ -106,7 +106,7 @@ public class DetailNews extends AppCompatActivity implements DetailNewsCallback 
 
         hideLoadingBar();
 
-        adView = findViewById(R.id.adViewDetail);
+        AdView adView = findViewById(R.id.adViewDetail);
         adViewMre = findViewById(R.id.adViewMREDetail);
 
         AdManager adManager = new AdManager(this);
